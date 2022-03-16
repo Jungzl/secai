@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es2017",
+    "module": "esnext",
+    "lib": ["DOM", "ESNext"],
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "/~/*": ["web/src/*"]
+    }
+  }
+}
