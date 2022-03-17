@@ -1,7 +1,7 @@
 {
   "name": "secai",
-  "version": "0.1.0",
-  "author": "Jungzl",
+  "version": "0.0.1",
+  "author": "jungzl",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -15,6 +15,10 @@
   },
   "bugs": "https://github.com/jungzl/secai.git",
   "homepage": "https://github.com/jungzl/secai#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "files": [
     "dist",
     "bin",
@@ -30,9 +34,8 @@
   "scripts": {
     "dev": "esno src/cli.ts",
     "build": "esno scripts/build.ts && tsup src/cli.ts src/index.ts --format cjs,esm --dts --minify",
-    "prepare": "npm run build",
-    "release": "npx bumpp --commit --tag --push && npm publish",
-    "web": "npm -C web run dev"
+    "prepare": "pnpm run build",
+    "release": "pnpm publish --no-git-checks"
   },
   "dependencies": {
     "chalk": "^4.1.2"
