@@ -6,12 +6,12 @@ const limit = +(process.argv[3]) || (input ? 15 : -1)
 
 let items = input ? getColors(input) : colors
 
-if (!isNaN(limit) && limit > 0)
+if (!Number.isNaN(limit) && limit > 0)
   items = items.slice(0, limit)
 
 console.log()
 items
-  .forEach((i) => {
+  .forEach(i => {
     console.log(
       chalk
         .bgHex(i.value)
