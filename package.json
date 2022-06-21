@@ -1,6 +1,6 @@
 {
   "name": "secai",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "jungzl",
   "license": "MIT",
   "main": "dist/index.js",
