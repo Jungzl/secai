@@ -1,15 +1,14 @@
-import fs from 'fs/promises'
+import fs from 'node:fs/promises'
 import chroma from 'chroma-js'
 import namer from 'color-namer'
-import colors from '../src/colors.json'
+import colors from '../src/colors.json' with { type: 'json' }
 
 async function start() {
   const items = colors
-    .map((i) => {
+    .map(i => {
       const c = chroma(i.value)
       const [hue, saturation, lightness] = c.hsl()
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
+      // @ts-expect-error ...
       const nameSets = namer(i.value, { distance: 'deltaE' })
 
       const names = Array.from(

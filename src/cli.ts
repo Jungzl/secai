@@ -1,3 +1,4 @@
+import process from 'node:process'
 import chalk from 'chalk'
 import { colors, getColors } from './index'
 
@@ -6,8 +7,9 @@ const limit = +(process.argv[3]) || (input ? 15 : -1)
 
 let items = input ? getColors(input) : colors
 
-if (!Number.isNaN(limit) && limit > 0)
+if (!Number.isNaN(limit) && limit > 0) {
   items = items.slice(0, limit)
+}
 
 console.log()
 items

@@ -1,29 +1,15 @@
 {
   "name": "secai",
   "version": "0.0.3",
+  "packageManager": "pnpm@11.5.0",
   "author": "jungzl",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "bin": {
-    "secai": "bin/secai.js"
-  },
+  "homepage": "https://github.com/jungzl/secai#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jungzl/secai.git"
   },
   "bugs": "https://github.com/jungzl/secai.git",
-  "homepage": "https://github.com/jungzl/secai#readme",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "files": [
-    "dist",
-    "bin",
-    "colors.json"
-  ],
   "keywords": [
     "color",
     "traditional",
@@ -31,26 +17,39 @@
     "iroiro",
     "secai"
   ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "secai": "bin/secai.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "bin",
+    "colors.json",
+    "dist"
+  ],
   "scripts": {
-    "dev": "tsx src/cli.ts",
-    "build": "tsx scripts/build.ts && tsdown src/cli.ts src/index.ts --format cjs,esm --dts --minify",
+    "dev": "node src/cli.ts",
+    "build": "node scripts/build.ts && tsdown src/cli.ts src/index.ts --format cjs,esm --dts --minify",
     "prepare": "pnpm run build",
     "release": "pnpm publish --no-git-checks"
   },
   "dependencies": {
-    "chalk": "^5.4.1"
+    "chalk": "^5.6.2"
   },
   "devDependencies": {
-    "@jungzl/eslint-config-ts": "^0.0.8",
-    "@types/chroma-js": "^3.1.1",
+    "@antfu/eslint-config": "^9.0.0",
+    "@types/chroma-js": "^3.1.2",
     "@types/color-namer": "^1.3.3",
-    "@types/node": "^22.15.34",
-    "chroma-js": "^3.1.2",
+    "@types/node": "^25.9.1",
+    "chroma-js": "^3.2.0",
     "color-namer": "^1.4.0",
-    "eslint": "^8.57.1",
-    "tsdown": "^0.12.9",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
-  },
-  "packageManager": "pnpm@10.12.4"
+    "eslint": "^10.4.1",
+    "tsdown": "^0.22.1",
+    "typescript": "^6.0.3"
+  }
 }

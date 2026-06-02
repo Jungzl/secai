@@ -33,8 +33,9 @@ function shuffle<T>(_arr: T[]): T[] {
 
 export const colors = _colors as Color[]
 
-export function getColors(name: string) {
-  if (name === 'random')
+export function getColors(name: string): Color[] {
+  if (name === 'random') {
     return shuffle(colors)
+  }
   return colors.filter(i => i.names.includes(name))
 }
