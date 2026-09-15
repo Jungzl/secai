@@ -1,3 +1,20 @@
 allowBuilds:
   es5-ext: false
   esbuild: false
+
+dedupeInjectedDeps: true
+cleanupUnusedCatalogs: true
+minimumReleaseAgeStrict: true
+minimumReleaseAgeExcludePrune: true
+trustLockfile: true
+trustPolicy: no-downgrade
+
+update:
+  githubActions: true
+
+dedupePeerDependents: true
+dedupePeers: true
+strictPeerDependencies: false
+
+shellEmulator: true
+dedupeDirectDeps: true
